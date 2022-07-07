@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <title>Service Worker Page</title>
     <script>
         window.serviceWorkerRegister = navigator.serviceWorker.register('sw.js');
+        navigator.serviceWorker.oncontrollerchange = function (event) {
+            console.info('[Window] service worker controller change', navigator.serviceWorker.controller);
+        }
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
