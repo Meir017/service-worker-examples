@@ -11,11 +11,13 @@
 
  sw.addEventListener("install", event => {
      console.info('[Service-Worker] install');
+     event.waitUntil(self.skipWaiting());
  });
  
  sw.addEventListener('activate', event => {
      console.info('[Service-Worker] activate');
- })
+     event.waitUntil(sw.clients.claim());
+ });
  
  sw.addEventListener('fetch', event => {
      try {
